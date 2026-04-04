@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D68D12" />
+      <stop offset="100%" stop-color="#F5AA23" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="150%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#D68D12" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Icon background -->
+  <rect x="10" y="10" width="80" height="80" rx="20" fill="url(#gold)" filter="url(#shadow)" />
+  
+  <!-- Icon Text -->
+  <text x="50" y="65" font-size="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">⚡</text>
+</svg>
