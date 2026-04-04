@@ -16,7 +16,7 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch('https://n8n-hswn.onrender.com/webhook-test/46d67768-62f9-42e6-bbd3-eda7b513b547', {
+      await fetch('https://n8n-hswn.onrender.com/webhook/test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
