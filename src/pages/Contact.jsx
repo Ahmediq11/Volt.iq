@@ -10,11 +10,25 @@ export default function Contact() {
 
   const [form, setForm] = useState({ name: '', phone: '', service: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', phone: '', service: '', message: '' });
+    setLoading(true);
+    try {
+      await fetch('https://n8n-hswn.onrender.com/webhook-test/46d67768-62f9-42e6-bbd3-eda7b513b547', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      setSent(true);
+      setForm({ name: '', phone: '', service: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert(lang === 'ar' ? 'حدث خطأ، يرجى إعادة المحاولة' : 'An error occurred, please try again');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const services = t.services.items.map(s => s.title);
@@ -156,8 +170,8 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="form-submit">
-                  {c.form.submit}
+                <button type="submit" className="form-submit" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
+                  {loading ? (lang === 'ar' ? 'جاري الإرسال...' : 'Sending...') : c.form.submit}
                 </button>
 
                 {sent && (
