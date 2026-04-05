@@ -328,6 +328,15 @@ input, textarea, select { font-family: inherit; }
   border-radius: 2px;
   transition: var(--transition-fast);
 }
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -1136,15 +1145,6 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   transition: var(--transition-fast);
 }
 .mobile-menu a:hover { color: var(--gold); }
-.mobile-menu__close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  padding: 8px;
-}
-[dir="rtl"] .mobile-menu__close { right: auto; left: 24px; }
 
 /* ===== PAGE TRANSITIONS ===== */
 .page-enter {

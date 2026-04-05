@@ -47,7 +47,7 @@ export default function Navbar() {
             <Link to="/contact" className="btn-primary" style={{ display: 'none' }}>
               {t.nav.cta}
             </Link>
-            <button className="hamburger" onClick={() => setMenuOpen(true)} aria-label="Menu">
+            <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
               <span /><span /><span />
             </button>
           </div>
@@ -56,7 +56,6 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <button className="mobile-menu__close" onClick={() => setMenuOpen(false)}>✕</button>
         {links.map(l => (
           <Link to={l.href} key={l.href}>{l.label}</Link>
         ))}
