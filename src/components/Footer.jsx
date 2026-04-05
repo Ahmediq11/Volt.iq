@@ -38,7 +38,7 @@ export default function Footer() {
             <h5>{lang === 'ar' ? 'تواصل' : 'Connect'}</h5>
             <ul>
               <li>
-                <a href="https://wa.me/9647801234567" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/9647742493300" target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
               </li>
